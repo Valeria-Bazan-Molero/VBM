@@ -1,39 +1,38 @@
-// Mostrar y ocultar menú al hacer click en el icono
 const menuToggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
 
-menuToggle.addEventListener('click', () => {
-  menu.classList.toggle('show');
+menuToggle.addEventListener('mouseenter', () => {
+  menu.classList.add('show');
 });
 
-// Para que el menú no desaparezca al clicar en un enlace
-menu.addEventListener('click', e => {
-  if (e.target.tagName === 'A') {
-    menu.classList.remove('show');
-  }
+menuToggle.addEventListener('mouseleave', () => {
+  // Con delay para que el usuario pueda mover el cursor al menú
+  setTimeout(() => {
+    if (!menu.matches(':hover') && !menuToggle.matches(':hover')) {
+      menu.classList.remove('show');
+    }
+  }, 200);
 });
 
-// Cerrar menú si se hace click fuera
-document.addEventListener('click', (e) => {
-  if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
-    menu.classList.remove('show');
-  }
+menu.addEventListener('mouseleave', () => {
+  menu.classList.remove('show');
+});
+
+menu.addEventListener('mouseenter', () => {
+  menu.classList.add('show');
 });
 
 // Carrusel automático
 const carouselImages = document.querySelectorAll('.carousel img');
 let currentIndex = 0;
 
-function showImage(index) {
-  carouselImages.forEach((img, i) => {
-    img.classList.toggle('active', i === index);
-  });
+function showNextImage() {
+  carouselImages[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex + 1) % carouselImages.length;
+  carouselImages[currentIndex].classList.add('active');
 }
 
-function nextImage() {
-  currentIndex = (currentIndex + 1) % carouselImages.length;
-  showImage(currentIndex);
-}
+setInterval(showNextImage, 4000); // Cambia cada 4 segundos
 
 if (carouselImages.length > 0) {
   showImage(currentIndex);
