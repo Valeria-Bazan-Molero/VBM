@@ -4,17 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Valeria Bazán Molero</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Manrope:wght@600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <div class="header-container">
-      <h1>Valeria Bazán Molero</h1>
+      <h1 class="brand">Valeria Bazán Molero</h1>
       <div class="menu-toggle" id="menu-toggle">☰</div>
       <nav class="menu" id="menu">
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#servicios">Servicios</a>
         <a href="#portafolio">Portafolio</a>
+        <a href="#tienda">Tienda / Shop</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </div>
@@ -22,35 +24,41 @@
 
   <section class="carrusel">
     <div class="slides">
-      <img src="https://via.placeholder.com/1000x400?text=Imagen+1" alt="Imagen 1">
-      <img src="https://via.placeholder.com/1000x400?text=Imagen+2" alt="Imagen 2">
-      <img src="https://via.placeholder.com/1000x400?text=Imagen+3" alt="Imagen 3">
+      <img src="https://via.placeholder.com/1000x400/DEC5F2/2E2E2E?text=Proyecto+1" alt="Proyecto 1">
+      <img src="https://via.placeholder.com/1000x400/C4EAF2/2E2E2E?text=Proyecto+2" alt="Proyecto 2">
+      <img src="https://via.placeholder.com/1000x400/FAE5EC/2E2E2E?text=Proyecto+3" alt="Proyecto 3">
     </div>
   </section>
 
   <main>
     <section id="sobre-mi">
       <h2>Sobre mí</h2>
-      <p>Hola, soy Valeria Bazán Molero. Me especializo en [tu especialidad]. Esta página resume quién soy y lo que puedo ofrecer.</p>
+      <p>Soy Valeria Bazán Molero, artista visual con enfoque en [tu enfoque artístico]. Me inspiro en [tu estilo] y cuento con experiencia en [tu experiencia].</p>
     </section>
 
     <section id="servicios">
       <h2>Servicios</h2>
       <ul>
-        <li>Diseño web</li>
-        <li>Asesoría técnica</li>
-        <li>Redacción de contenido</li>
+        <li>Ilustración personalizada</li>
+        <li>Diseño editorial</li>
+        <li>Asesoría creativa</li>
       </ul>
     </section>
 
     <section id="portafolio">
       <h2>Portafolio</h2>
-      <p>Aquí puedes agregar enlaces o imágenes de tus trabajos anteriores.</p>
+      <p>Aquí mostrarás tus trabajos organizados por tipo o estilo.</p>
+    </section>
+
+    <section id="tienda">
+      <h2>Tienda / Shop</h2>
+      <p>Venta de productos físicos o digitales. Puedes incluir enlaces a plataformas como Etsy o Gumroad.</p>
     </section>
 
     <section id="contacto">
       <h2>Contacto</h2>
-      <p>Puedes escribirme a: tuemail@dominio.com</p>
+      <p>Correo: <a href="mailto:tucorreo@example.com">tucorreo@example.com</a></p>
+      <p>Redes sociales: [Instagram] [Behance] [LinkedIn]</p>
     </section>
   </main>
 
@@ -59,14 +67,12 @@
   </footer>
 
   <script>
-    // Menú hamburguesa toggle
     const toggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
     toggle.addEventListener('click', () => {
       menu.classList.toggle('show');
     });
 
-    // Carrusel automático
     let index = 0;
     const slides = document.querySelectorAll('.slides img');
     setInterval(() => {
@@ -74,7 +80,7 @@
         img.style.display = i === index ? 'block' : 'none';
       });
       index = (index + 1) % slides.length;
-    }, 3000);
+    }, 4000);
   </script>
 </body>
 </html>
