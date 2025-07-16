@@ -3,18 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contacto - Valeria Bazán Molero</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <title>Valeria Bazán Molero - Contacto</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header>
-    <h1 class="brand">Valeria Bazán Molero</h1>
+    <h1 class="brand"><a href="index.html">Valeria Bazán Molero</a></h1>
     <div class="menu-container">
-      <div id="menu-toggle" class="menu-toggle" title="Abrir menú">☰</div>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
       <nav id="menu" class="menu">
+        <a href="index.html">Home</a>
         <a href="sobre-mi.html">Sobre mí</a>
         <a href="servicios.html">Servicios</a>
         <a href="portafolio.html">Portafolio</a>
@@ -23,22 +21,22 @@
       </nav>
     </div>
   </header>
+  <main>
+    <section class="content-section">
+      <h2>Contacto</h2>
+      <form>
+        <label for="name">Nombre:</label><br />
+        <input type="text" id="name" name="name" required /><br />
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br />
+        <label for="message">Mensaje:</label><br />
+        <textarea id="message" name="message" rows="4" required></textarea><br />
+        <button type="submit">Enviar</button>
+      </form>
+      <p>También puedes contactarme a través de mis redes sociales o correo electrónico.</p>
+    </section>
+  </main>
 
-  <main style="margin-top: 80px; padding: 1rem;">
-    <h2>Contacto</h2>
-    <form action="mailto:tu-email@example.com" method="post" enctype="text/plain">
-      <label for="nombre">Nombre:</label><br />
-      <input type="text" id="nombre" name="nombre" required /><br /><br />
-      
-      <label for="email">Correo electrónico:</label><br />
-      <input type="email" id="email" name="email" required /><br /><br />
-      
-      <label for="mensaje">Mensaje:</label><br />
-      <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br /><br />
-      
-      <button type="submit" style="background-color: #BFA7F2; color: #2E2E2E; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer;">Enviar</button>
-    </form>
-
-    <section style="margin-top: 2rem;">
-      <h3>Sígueme en redes sociales</h3>
-      <p>
+  <script src="script.js"></script>
+</body>
+</html>
