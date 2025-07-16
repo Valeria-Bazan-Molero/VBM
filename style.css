@@ -6,25 +6,70 @@ body {
 }
 
 header {
-  background: #333;
+  background-color: #1a1a1a;
   color: white;
   padding: 1rem;
-  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-nav a {
-  margin: 0 1rem;
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-toggle {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  background-color: #333;
+  position: absolute;
+  top: 60px;
+  right: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.menu a {
   color: white;
   text-decoration: none;
+  padding: 0.5rem 0;
+}
+
+.menu.show {
+  display: flex;
+}
+
+.carrusel {
+  margin-top: 80px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slides img {
+  width: 100%;
+  display: none;
+}
+
+main {
+  padding: 2rem;
 }
 
 section {
-  padding: 2rem;
-  border-bottom: 1px solid #ccc;
+  margin-top: 2rem;
 }
 
 footer {
   text-align: center;
   padding: 1rem;
-  background: #f1f1f1;
+  background-color: #f1f1f1;
+  margin-top: 2rem;
 }
+
