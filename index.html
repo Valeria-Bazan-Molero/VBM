@@ -3,46 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mi Página Web</title>
+  <title>Valeria Bazán Molero</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Mi Nombre</h1>
-    <nav>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#portafolio">Portafolio</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+    <div class="header-container">
+      <h1>Valeria Bazán Molero</h1>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <nav class="menu" id="menu">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
   </header>
 
-  <section id="sobre-mi">
-    <h2>Sobre mí</h2>
-    <p>Hola, soy [tu nombre]. Me especializo en [tu especialidad]. Esta página resume quién soy y lo que puedo ofrecer.</p>
+  <section class="carrusel">
+    <div class="slides">
+      <img src="https://via.placeholder.com/1000x400?text=Imagen+1" alt="Imagen 1">
+      <img src="https://via.placeholder.com/1000x400?text=Imagen+2" alt="Imagen 2">
+      <img src="https://via.placeholder.com/1000x400?text=Imagen+3" alt="Imagen 3">
+    </div>
   </section>
 
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <ul>
-      <li>Diseño web</li>
-      <li>Asesoría técnica</li>
-      <li>Redacción de contenido</li>
-    </ul>
-  </section>
+  <main>
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <p>Hola, soy Valeria Bazán Molero. Me especializo en [tu especialidad]. Esta página resume quién soy y lo que puedo ofrecer.</p>
+    </section>
 
-  <section id="portafolio">
-    <h2>Portafolio</h2>
-    <p>Aquí puedes agregar enlaces o imágenes de tus trabajos anteriores.</p>
-  </section>
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <ul>
+        <li>Diseño web</li>
+        <li>Asesoría técnica</li>
+        <li>Redacción de contenido</li>
+      </ul>
+    </section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>Puedes escribirme a: tuemail@dominio.com</p>
-  </section>
+    <section id="portafolio">
+      <h2>Portafolio</h2>
+      <p>Aquí puedes agregar enlaces o imágenes de tus trabajos anteriores.</p>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Puedes escribirme a: tuemail@dominio.com</p>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 - Tu Nombre</p>
+    <p>© 2025 - Valeria Bazán Molero</p>
   </footer>
+
+  <script>
+    // Menú hamburguesa toggle
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    // Carrusel automático
+    let index = 0;
+    const slides = document.querySelectorAll('.slides img');
+    setInterval(() => {
+      slides.forEach((img, i) => {
+        img.style.display = i === index ? 'block' : 'none';
+      });
+      index = (index + 1) % slides.length;
+    }, 3000);
+  </script>
 </body>
-</h
+</html>
+
