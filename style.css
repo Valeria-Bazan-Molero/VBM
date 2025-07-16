@@ -1,18 +1,30 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
+  background-color: #FAFAF9;
+  color: #2E2E2E;
   margin: 0;
   padding: 0;
   line-height: 1.6;
 }
 
+h1, h2 {
+  font-family: 'Manrope', sans-serif;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #2E2E2E;
+}
+
 header {
-  background-color: #1a1a1a;
-  color: white;
+  background-color: #BFA7F2;
   padding: 1rem;
   position: fixed;
-  top: 0;
   width: 100%;
+  top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .header-container {
@@ -24,23 +36,31 @@ header {
 .menu-toggle {
   font-size: 1.8rem;
   cursor: pointer;
+  color: #2E2E2E;
 }
 
 .menu {
   display: none;
   flex-direction: column;
-  background-color: #333;
   position: absolute;
   top: 60px;
   right: 1rem;
-  padding: 1rem;
+  background-color: white;
+  border: 1px solid #eee;
   border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .menu a {
-  color: white;
   text-decoration: none;
+  color: #2E2E2E;
   padding: 0.5rem 0;
+  font-weight: 600;
+}
+
+.menu a:hover {
+  color: #FF6F91;
 }
 
 .menu.show {
@@ -56,20 +76,23 @@ header {
 .slides img {
   width: 100%;
   display: none;
+  transition: opacity 1s ease;
 }
 
 main {
   padding: 2rem;
+  max-width: 900px;
+  margin: auto;
 }
 
 section {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #f1f1f1;
-  margin-top: 2rem;
+  background: linear-gradient(to right, #BFA7F2, #C4EAF2);
+  color: #2E2E2E;
+  margin-top: 3rem;
 }
-
