@@ -33,8 +33,3 @@ function showNextImage() {
 }
 
 setInterval(showNextImage, 4000); // Cambia cada 4 segundos
-
-if (carouselImages.length > 0) {
-  showImage(currentIndex);
-  setInterval(nextImage, 4000); // Cambia cada 4 segundos
-}
