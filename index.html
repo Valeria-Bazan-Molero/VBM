@@ -2,86 +2,39 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Valeria Bazán Molero</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
-    <div class="header-container">
-      <h1 class="brand">Valeria Bazán Molero</h1>
-      <div class="menu-toggle" id="menu-toggle">☰</div>
-      <nav class="menu" id="menu">
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#portafolio">Portafolio</a>
-        <a href="#tienda">Tienda / Shop</a>
-        <a href="#contacto">Contacto</a>
+    <h1 class="brand">Valeria Bazán Molero</h1>
+    <div class="menu-container">
+      <div id="menu-toggle" class="menu-toggle" title="Abrir menú">☰</div>
+      <nav id="menu" class="menu">
+        <a href="sobre-mi.html">Sobre mí</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="portafolio.html">Portafolio</a>
+        <a href="tienda.html">Tienda / Shop</a>
+        <a href="contacto.html">Contacto</a>
       </nav>
     </div>
   </header>
 
   <section class="carrusel">
-    <div class="slides">
-      <img src="https://via.placeholder.com/1000x400/DEC5F2/2E2E2E?text=Proyecto+1" alt="Proyecto 1">
-      <img src="https://via.placeholder.com/1000x400/C4EAF2/2E2E2E?text=Proyecto+2" alt="Proyecto 2">
-      <img src="https://via.placeholder.com/1000x400/FAE5EC/2E2E2E?text=Proyecto+3" alt="Proyecto 3">
-    </div>
+    <img src="imagen001.jpg" alt="Imagen 1" class="slide active" />
+    <img src="imagen002.jpg" alt="Imagen 2" class="slide" />
+    <img src="imagen003.jpg" alt="Imagen 3" class="slide" />
+    <img src="imagen004.jpg" alt="Imagen 4" class="slide" />
   </section>
 
-  <main>
-    <section id="sobre-mi">
-      <h2>Sobre mí</h2>
-      <p>Soy Valeria Bazán Molero, artista visual con enfoque en [tu enfoque artístico]. Me inspiro en [tu estilo] y cuento con experiencia en [tu experiencia].</p>
-    </section>
-
-    <section id="servicios">
-      <h2>Servicios</h2>
-      <ul>
-        <li>Ilustración personalizada</li>
-        <li>Diseño editorial</li>
-        <li>Asesoría creativa</li>
-      </ul>
-    </section>
-
-    <section id="portafolio">
-      <h2>Portafolio</h2>
-      <p>Aquí mostrarás tus trabajos organizados por tipo o estilo.</p>
-    </section>
-
-    <section id="tienda">
-      <h2>Tienda / Shop</h2>
-      <p>Venta de productos físicos o digitales. Puedes incluir enlaces a plataformas como Etsy o Gumroad.</p>
-    </section>
-
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>Correo: <a href="mailto:tucorreo@example.com">tucorreo@example.com</a></p>
-      <p>Redes sociales: [Instagram] [Behance] [LinkedIn]</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 - Valeria Bazán Molero</p>
-  </footer>
-
-  <script>
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('show');
-    });
-
-    let index = 0;
-    const slides = document.querySelectorAll('.slides img');
-    setInterval(() => {
-      slides.forEach((img, i) => {
-        img.style.display = i === index ? 'block' : 'none';
-      });
-      index = (index + 1) % slides.length;
-    }, 4000);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
 
