@@ -1,4 +1,3 @@
-/* Carga de la fuente Tangiela */
 @font-face {
   font-family: 'Tangiela';
   src: url('fonts/Tangiela-Regular.woff2') format('woff2'),
@@ -8,33 +7,34 @@
   font-style: normal;
 }
 
-/* Fuentes principales */
-body {
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
+  background-color: #FAFAF9; /* Fondo blanco hueso suave */
   font-family: 'Inter', sans-serif;
-  background-color: #FAFAF9;
   color: #2E2E2E;
-  overflow-x: hidden;
 }
 
-/* Header y branding */
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
   padding: 1rem 2rem;
   background: linear-gradient(90deg, #BFA7F2, #70D6FF);
-  height: 5.5rem; /* un poco más ancho */
+  height: 5.5rem;
   box-sizing: border-box;
 }
 
 .brand {
   font-family: 'Tangiela', serif;
   font-size: 2.2rem;
-  margin: 0;
+  margin: 0 auto;
   color: white;
   cursor: pointer;
   user-select: none;
+  z-index: 2;
 }
 
 .brand a {
@@ -42,10 +42,13 @@ header {
   text-decoration: none;
 }
 
-/* Menú desplegable */
 .menu-container {
-  position: relative;
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
   user-select: none;
+  z-index: 3;
 }
 
 .menu-toggle {
@@ -91,24 +94,26 @@ header {
   border-bottom: none;
 }
 
-/* Mostrar menú cuando esté activo */
 .menu.show {
   display: flex;
 }
 
-/* Carrusel */
+main {
+  height: calc(100vh - 5.5rem);
+  margin: 0;
+  padding: 0;
+}
+
 .carousel {
-  position: relative;
+  height: 100%;
   max-width: 100%;
-  height: 400px;
   overflow: hidden;
-  margin: 0 auto;
-  background: #eee;
+  position: relative;
 }
 
 .carousel img {
   width: 100%;
-  height: 400px;
+  height: 100%;
   object-fit: cover;
   display: none;
   transition: opacity 1s ease-in-out;
@@ -119,23 +124,58 @@ header {
   opacity: 1;
 }
 
+.content-section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  color: #2E2E2E;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+}
+
+form button {
+  background-color: #BFA7F2;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #8c74c8;
+}
+
 /* Responsive */
 
 @media (max-width: 768px) {
   header {
     padding: 1rem;
-    height: 4.5rem;
   }
+
+  .menu {
+    min-width: 140px;
+  }
+
   .brand {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
-  .menu-toggle {
-    font-size: 1.5rem;
-  }
-  .carousel {
-    height: 250px;
-  }
-  .carousel img {
-    height: 250px;
+
+  main {
+    height: auto;
   }
 }
