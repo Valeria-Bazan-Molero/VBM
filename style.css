@@ -13,8 +13,9 @@ html, body {
   padding: 0;
   background-color: #FAFAF9; /* Fondo blanco hueso suave */
   font-family: 'Inter', sans-serif;
-  color: #2E2E2E;
+  color: #BFA7F2; /* lila casi blanco para todo el texto */
   overflow-x: hidden; /* evitar scroll horizontal */
+  font-size: 18px; /* tamaño de letra aumentado 5 puntos */
 }
 
 header {
@@ -30,7 +31,7 @@ header {
 
 .brand {
   font-family: 'Tangiela', serif;
-  font-size: 2.2rem;
+  font-size: 2.7rem; /* aumentado 5 puntos */
   margin: 0 auto;
   color: white;
   cursor: pointer;
@@ -80,8 +81,8 @@ header {
 .menu a {
   padding: 0.8rem 1rem;
   text-decoration: none;
-  color: #e6e0f8; /* lila muy claro */
-  font-size: 18px; /* +5px respecto al original */
+  color: #BFA7F2; /* lila casi blanco */
+  font-size: 18px; /* aumentado 5 puntos */
   border-bottom: 1px solid #ddd;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -104,6 +105,7 @@ main {
   height: calc(100vh - 5.5rem);
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .carousel {
@@ -134,11 +136,14 @@ main {
   max-width: 900px;
   margin: 0 auto;
   font-family: 'Inter', sans-serif;
-  color: #2E2E2E;
+  color: #BFA7F2; /* lila casi blanco */
+  font-size: 18px; /* aumentado 5 puntos */
 }
 
 form label {
   font-weight: bold;
+  color: #BFA7F2;
+  font-size: 18px; /* aumentado */
 }
 
 form input, form textarea {
@@ -148,6 +153,7 @@ form input, form textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-family: 'Inter', sans-serif;
+  font-size: 18px; /* aumentado */
 }
 
 form button {
@@ -159,6 +165,7 @@ form button {
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.3s;
+  font-size: 18px; /* aumentado */
 }
 
 form button:hover {
@@ -177,7 +184,7 @@ form button:hover {
   }
 
   .brand {
-    font-size: 1.8rem;
+    font-size: 2.2rem; /* tamaño ajustado en móvil */
   }
 
   main {
