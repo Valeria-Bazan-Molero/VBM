@@ -14,6 +14,7 @@ html, body {
   background-color: #FAFAF9; /* Fondo blanco hueso suave */
   font-family: 'Inter', sans-serif;
   color: #2E2E2E;
+  overflow-x: hidden; /* evitar scroll horizontal */
 }
 
 header {
@@ -23,8 +24,9 @@ header {
   position: relative;
   padding: 1rem 2rem;
   background: linear-gradient(90deg, #BFA7F2, #70D6FF);
-  height: 5.5rem;
+  height: 7.5rem; /* aumentado ~2cm */
   box-sizing: border-box;
+  z-index: 10;
 }
 
 .brand {
@@ -34,29 +36,28 @@ header {
   color: white;
   cursor: pointer;
   user-select: none;
-  z-index: 2;
-}
-
-.brand a {
-  color: inherit;
-  text-decoration: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 15;
 }
 
 .menu-container {
   position: absolute;
-  right: 2rem;
+  right: 1.5rem; /* más cerca del centro */
   top: 50%;
   transform: translateY(-50%);
   user-select: none;
-  z-index: 3;
+  z-index: 20;
 }
 
 .menu-toggle {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: white;
   cursor: pointer;
   width: 2.5rem;
-  height: 2rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,7 +67,7 @@ header {
 .menu {
   position: absolute;
   right: 0;
-  top: 2.5rem;
+  top: 3rem;
   background-color: white;
   border-radius: 6px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
@@ -81,7 +82,8 @@ header {
   text-decoration: none;
   color: #2E2E2E;
   border-bottom: 1px solid #ddd;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Inter', sans-serif;
 }
 
 .menu a:hover {
@@ -99,29 +101,45 @@ header {
 }
 
 main {
-  height: calc(100vh - 5.5rem);
   margin: 0;
   padding: 0;
 }
 
-.carousel {
-  height: 100%;
-  max-width: 100%;
+.carousel-container {
+  height: calc(100vh - 7.5rem);
+  width: 100%;
   overflow: hidden;
   position: relative;
+  max-width: 100vw;
 }
 
-.carousel img {
-  width: 100%;
+.carousel-slide {
+  display: flex;
+  height: 100%;
+  width: 400%; /* 4 imágenes */
+  animation: slide 12s infinite;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100vw;
   height: 100%;
   object-fit: cover;
-  display: none;
-  transition: opacity 1s ease-in-out;
+  flex-shrink: 0;
+  display: block;
 }
 
-.carousel img.active {
-  display: block;
-  opacity: 1;
+/* Animación para cambiar imágenes automáticamente */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(0); }
+  25% { transform: translateX(-100vw); }
+  45% { transform: translateX(-100vw); }
+  50% { transform: translateX(-200vw); }
+  70% { transform: translateX(-200vw); }
+  75% { transform: translateX(-300vw); }
+  95% { transform: translateX(-300vw); }
+  100% { transform: translateX(0); }
 }
 
 .content-section {
@@ -160,22 +178,64 @@ form button:hover {
   background-color: #8c74c8;
 }
 
+/* COLOR DEL TITULO EN TODAS LAS PÁGINAS */
+.brand {
+  color: white; /* for index */
+}
+
+/* Para mantener el color blanco del título también en las categorías */
+body:not(.index) .brand {
+  color: white !important; /* Forzar que sea blanco */
+}
+
 /* Responsive */
+
+@media (max-width: 1024px) {
+  header {
+    padding: 1rem 1.5rem;
+    height: 6.5rem;
+  }
+  .brand {
+    font-size: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .menu-container {
+    right: 1rem;
+  }
+}
 
 @media (max-width: 768px) {
   header {
     padding: 1rem;
+    height: 5.5rem;
+  }
+
+  .brand {
+    font-size: 1.6rem;
   }
 
   .menu {
     min-width: 140px;
+    top: 2.5rem;
+    right: 0.5rem;
   }
 
-  .brand {
-    font-size: 1.8rem;
+  /* Menu toggle visible */
+  .menu-toggle {
+    display: flex;
   }
+}
 
-  main {
-    height: auto;
+/* Mobile: Mostrar menú cuando tenga clase .show */
+.menu.show {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Para que el carrusel ocupe toda la pantalla móvil */
+@media (max-width: 480px) {
+  .carousel-container {
+    height: calc(100vh - 5.5rem);
   }
 }
