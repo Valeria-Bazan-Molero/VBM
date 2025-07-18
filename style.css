@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Tangiela';
-  src: url('fonts/Tangiela-Regular.woff2') format('woff2'),
-       url('fonts/Tangiela-Regular.woff') format('woff'),
-       url('fonts/Tangiela-Regular.ttf') format('truetype');
+  src: url('fonts/Tangiela.woff2') format('woff2'),
+       url('fonts/Tangiela.woff') format('woff'),
+       url('fonts/Tangiela.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
