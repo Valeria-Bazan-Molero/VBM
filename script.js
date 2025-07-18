@@ -6,7 +6,7 @@ menuToggle.addEventListener('click', () => {
   menu.classList.toggle('show');
 });
 
-// Opcional: cerrar menú si se hace click fuera
+// Cerrar menú si se hace click fuera
 document.addEventListener('click', (event) => {
   if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
     menu.classList.remove('show');
