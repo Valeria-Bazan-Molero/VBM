@@ -2,30 +2,35 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Valeria Bazán Molero - Sobre mí</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios - Valeria Bazán Molero</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Tangiela';
+      src: url('fonts/Tangiela-Regular.woff2') format('woff2');
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <h1 class="brand"><a href="index.html">Valeria Bazán Molero</a></h1>
-    <div class="menu-container">
-      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-      <nav id="menu" class="menu">
-        <a href="index.html">Home</a>
-        <a href="sobre-mi.html">Sobre mí</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="portafolio.html">Portafolio</a>
-        <a href="tienda.html">Tienda / Shop</a>
-        <a href="contacto.html">Contacto</a>
-      </nav>
-    </div>
+  <header class="site-header">
+    <h1 class="site-title" onclick="goHome()">Valeria Bazán Molero</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="sobre-mi.html">Sobre mí</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="portafolio.html">Portafolio</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
   </header>
-  <main>
-    <section class="content-section">
-      <h2>Sobre mí</h2>
-      <p>Aquí escribe sobre ti, tu enfoque artístico, experiencia y estilo personal.</p>
-    </section>
+
+  <main class="contenido">
+    <h2>Servicios</h2>
+    <p>Describe aquí los servicios que ofreces, como ilustración personalizada, branding, etc.</p>
   </main>
 
   <script src="script.js"></script>
