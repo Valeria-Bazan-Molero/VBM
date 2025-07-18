@@ -1,12 +1,12 @@
 const menuToggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
 
+// Para escritorio: mostrar menú al pasar el cursor
 menuToggle.addEventListener('mouseenter', () => {
   menu.classList.add('show');
 });
 
 menuToggle.addEventListener('mouseleave', () => {
-  // Con delay para que el usuario pueda mover el cursor al menú
   setTimeout(() => {
     if (!menu.matches(':hover') && !menuToggle.matches(':hover')) {
       menu.classList.remove('show');
@@ -14,15 +14,28 @@ menuToggle.addEventListener('mouseleave', () => {
   }, 200);
 });
 
-menu.addEventListener('mouseleave', () => {
-  menu.classList.remove('show');
-});
-
 menu.addEventListener('mouseenter', () => {
   menu.classList.add('show');
 });
 
-// Carrusel automático
+menu.addEventListener('mouseleave', () => {
+  menu.classList.remove('show');
+});
+
+// Para móvil: abrir/cerrar menú al click en icono
+menuToggle.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
+
+// Opcional: cerrar menú al clicar en un enlace (para móviles)
+const menuLinks = menu.querySelectorAll('a');
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('show');
+  });
+});
+
+// Carrusel automático (si usas el método con imágenes con clase active)
 const carouselImages = document.querySelectorAll('.carousel img');
 let currentIndex = 0;
 
