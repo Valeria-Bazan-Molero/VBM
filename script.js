@@ -1,14 +1,13 @@
 const menuToggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
 
-// Mostrar y ocultar menú al hacer click en móvil/tablet
 menuToggle.addEventListener('click', () => {
   menu.classList.toggle('show');
 });
 
-// Cerrar menú si se hace click fuera
-document.addEventListener('click', (event) => {
-  if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+// Opcional: cerrar menú al hacer click fuera (si quieres)
+document.addEventListener('click', (e) => {
+  if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
     menu.classList.remove('show');
   }
 });
@@ -23,4 +22,4 @@ function showNextImage() {
   carouselImages[currentIndex].classList.add('active');
 }
 
-setInterval(showNextImage, 4000); // Cambia cada 4 segundos
+setInterval(showNextImage, 3000); // cambia cada 3 segundos
